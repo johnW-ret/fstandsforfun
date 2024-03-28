@@ -3,6 +3,9 @@ F Stands for Fun
 
 This is an F# tutorial setup as a single page at [fstandsfor.fun](fstandsfor.fun).
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.dev/johnW-ret/fstandsforfun)
+> To open using a dev container, click on the Remote Window indicator in the bottom left or use the command palette (Ctrl+Shift+P) to select one of the options supporting dev containers, such as "Codespaces: Continue Working in New Codespace".
+
 Goals:
 1. Fun
 
