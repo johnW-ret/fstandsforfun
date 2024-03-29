@@ -31,7 +31,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Generate notebook
       run: |
-        jupyter nbconvert --to HTML index.ipynb
+        jupyter nbconvert --to HTML index.ipynb --template=responsive
     # Upload the static files
     - name: Upload documentation
       uses: actions/upload-pages-artifact@v2

@@ -1,0 +1,7 @@
+{
+    "base_template": "lab",
+    "mimetypes": {
+      "text/markdown": true,
+      "text/html": true
+    }
+  }
