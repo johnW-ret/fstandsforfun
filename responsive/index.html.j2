@@ -3,14 +3,59 @@
 {%- block html_head -%}
 {{ super() }}
 <style>
+    /* amazing css 🫡 */
     .cm-editor {
         overflow: auto;
         white-space: nowrap;
     }
 
-    :root {
-        --jp-code-font-size: 16px;
-        --jp-content-font-size1: 18px;
+    .jp-OutputArea-output {
+        overflow: auto;
     }
+
+    :root {
+        --jp-content-font-size5: 1.6em;
+    }
+
+    .jp-MarkdownCell {
+        --jp-content-font-size1: 3rem;
+        margin: 0 auto;
+        max-width: 1092px;
+    }
+
+    .jp-RenderedHTMLCommon blockquote {
+        margin: 0;
+    }
+
+    .jp-CodeCell {
+        --jp-code-font-size: 1.2rem;
+        --jp-content-font-size1: 1.2rem;
+        --jp-ui-font-size1: 1.2rem;
+    }
+
+    .jp-InputPrompt.jp-InputArea-prompt {
+        display: none;
+    }
+
+    .jp-OutputArea.jp-Cell-outputArea {
+        max-width: 1080px;
+    }
+
+    .jp-OutputArea {
+        margin: auto
+    }
+
+    .cm-editor.cm-s-jupyter .highlight pre {
+        margin: auto
+    }
+
+    pre {
+        max-width: 1080px;
+    }
+
+    .jp-OutputPrompt.jp-OutputArea-prompt {
+        display: none;
+    }
+
 </style>
 {%- endblock html_head -%}
