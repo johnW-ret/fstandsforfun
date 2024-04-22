@@ -12,6 +12,21 @@
 <meta name="twitter:description" content="A quick guide to get you up and running with F#, starting from the bare basics. View as a simple webpage or a notebook with Codespaces.">
 <style>
     /* amazing css 🫡 */
+    @keyframes fadeTopDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .fade-in-top {
+        animation: fadeTopDown 0.3s ease forwards;
+    }
+
     .cm-editor {
         overflow: auto;
         white-space: nowrap;
@@ -23,6 +38,27 @@
 
     :root {
         --jp-content-font-size5: 1.6em;
+    }
+
+    .jp-Cell {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    @media (prefers-reduced-motion: reduce) or (scripting: none) {
+        .jp-Cell {
+            opacity: revert-layer;
+            transform: revert-layer;
+        }
+
+        /* https://www.a11yproject.com/posts/understanding-vestibular-disorders#what-should-you-consider%3F */
+        *,
+        ::before,
+        ::after {
+            animation-duration: 0.001s !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.001s !important;
+        }
     }
 
     .jp-MarkdownCell {
@@ -75,4 +111,20 @@
     }
 
 </style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(entries => {
+        for (var entry of entries) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-top');
+            }
+        }
+    }, { threshold: 0.4, rootMargin: "0px 0px -40% 0px" });
+
+    for (var el of document.querySelectorAll('.jp-Cell').values()) {
+        // cannot just pass the func idk why
+        observer.observe(el);
+    }
+});
+</script>
 {%- endblock html_head -%}
